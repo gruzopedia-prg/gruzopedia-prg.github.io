@@ -1,5 +1,5 @@
 ---
-title: Skoda Fabia
+title: Škoda Fabia
 wlasciciel: Jasina
 rok: ??-2026
 status: w użyciu

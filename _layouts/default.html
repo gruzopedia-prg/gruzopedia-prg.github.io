@@ -11,7 +11,7 @@
 </head>
 <body>
   <div class="topline">
-    <span>Gruzopedia PRG • Encyklopedia aut bożych</span>
+    <span>Gruzopedia PRG • Encyklopedia dostojnych samochodów</span>
     <span class="topline-right">Wersja 1.0 · <a href="{{ '/o-gruzopedii/' | relative_url }}">O projekcie</a></span>
   </div>
   <header class="site-header">
@@ -30,6 +30,7 @@
           <li><a href="{{ '/' | relative_url }}">Strona główna</a></li>
           <li><a href="{{ '/#spis-aut' | relative_url }}">Spis pojazdów</a></li>
           <li><a href="{{ '/o-gruzopedii/' | relative_url }}">O Gruzopedii</a></li>
+          <li><a href="#" id="random-gruz">Losuj gruza</a></li>
         </ul>
       </section>
       <section class="side-group">
@@ -59,5 +60,26 @@
       </footer>
     </div>
   </div>
+
+  
+  <script>
+    const gruzy = [
+      {% for auto in site.auta %}
+        {{ auto.url | relative_url | jsonify }}{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    ];
+
+    document.getElementById("random-gruz")
+      .addEventListener("click", function(event) {
+        event.preventDefault();
+
+        if (gruzy.length === 0) return;
+
+        const index = Math.floor(Math.random() * gruzy.length);
+        window.location.href = gruzy[index];
+      });
+  </script>
+
+
 </body>
 </html>

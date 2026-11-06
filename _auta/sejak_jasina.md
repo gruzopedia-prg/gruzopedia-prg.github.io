@@ -1,5 +1,5 @@
 ---
-title: Seicento II (Jasina)
+title: Fiat Seicento
 wlasciciel: Jasina
 rok: ??-2026
 status: na skraju wytrzymałości
