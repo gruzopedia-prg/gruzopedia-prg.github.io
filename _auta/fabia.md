@@ -7,7 +7,7 @@ ocena: "7,2"
 zdjecie: /assets/img/dostojna_skoda.jpeg
 podpis_zdjecia: Fabia po modyfikacji maski
 opis: Sprawdzone daily. (work in progress)
-demo: true
+demo: false
 dane:
   marka: Skoda
   model: Fabia

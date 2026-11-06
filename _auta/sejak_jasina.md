@@ -7,7 +7,7 @@ ocena: "9,2"
 zdjecie: /assets/img/brak-zdjecia.svg
 podpis_zdjecia: Tu pojawi się zdjęcie samochodu.
 opis: Kolejne sprawdzone poczciwe seicento. (work in progress)
-demo: true
+demo: false
 dane:
   marka: Fiat
   model: Seicento

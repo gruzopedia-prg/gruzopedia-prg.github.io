@@ -7,7 +7,7 @@ ocena: "6,1"
 zdjecie: /assets/img/brak-zdjecia.svg
 podpis_zdjecia: Tu pojawi się zdjęcie samochodu.
 opis: Saab, klejnot w koronie pruszczańskiej floty. (work in progress)
-demo: true
+demo: false
 dane:
   marka: Saab
   model: ?

@@ -7,7 +7,7 @@ ocena: "7,3"
 zdjecie: /assets/img/brak-zdjecia.svg
 podpis_zdjecia: Tu pojawi się zdjęcie samochodu.
 opis: Pierwsze auto Grodka, zakupione w baninie. Niestety obecnie gnije sobie na złomowcu w Łęgowie.
-demo: true
+demo: false
 dane:
   marka: Mazda
   model: 3

@@ -7,7 +7,7 @@ ocena: "8,1"
 zdjecie: /assets/img/dostojne_audi.jpeg
 podpis_zdjecia: Audi w Toruniu
 opis: Audi 80 [work in progress]
-demo: true
+demo: false
 dane:
   marka: Audi
   model: 80

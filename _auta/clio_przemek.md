@@ -7,7 +7,7 @@ ocena: "9,7"
 zdjecie: /assets/img/brak-zdjecia.svg
 podpis_zdjecia: Tu pojawi się zdjęcie samochodu.
 opis: Dostojny bolid przemka.
-demo: true
+demo: false
 dane:
   marka: Renault
   model: Clio

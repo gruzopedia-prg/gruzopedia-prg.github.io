@@ -7,7 +7,7 @@ ocena: "8,7"
 zdjecie: /assets/img/brak-zdjecia.svg
 podpis_zdjecia: Tu pojawi się zdjęcie samochodu.
 opis: Niezawodny bolid przemka.
-demo: true
+demo: false
 dane:
   marka: Opel
   model: Corsa

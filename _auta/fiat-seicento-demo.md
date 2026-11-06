@@ -1,5 +1,5 @@
 ---
-title: Fiat Seicento ,,Sejak"
+title: Fiat Seicento
 wlasciciel: Przemek
 rok: nie wiadomo
 status: zaginiony
@@ -7,7 +7,7 @@ ocena: "9,1"
 zdjecie: /assets/img/brak-zdjecia.svg
 podpis_zdjecia: Tu pojawi się zdjęcie samochodu.
 opis: test opisu gruzopedia.
-demo: true
+demo: false
 dane:
   marka: Fiat
   model: Seicento
