@@ -4,8 +4,8 @@ wlasciciel: Przemek
 rok: 2026-dotychczas
 status: jeździ
 ocena: "8,7"
-zdjecie: /assets/img/brak-zdjecia.svg
-podpis_zdjecia: Tu pojawi się zdjęcie samochodu.
+zdjecie: /assets/img/dostojna_corsa.jpeg
+podpis_zdjecia: Corsa nocą.
 opis: Niezawodny bolid przemka.
 demo: false
 dane:

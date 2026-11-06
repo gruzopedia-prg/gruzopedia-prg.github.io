@@ -4,8 +4,8 @@ wlasciciel: Grodek
 rok: 2021-2025
 status: zezłomowana
 ocena: "7,3"
-zdjecie: /assets/img/brak-zdjecia.svg
-podpis_zdjecia: Tu pojawi się zdjęcie samochodu.
+zdjecie: /assets/img/dostojna_mazda.jpeg
+podpis_zdjecia: Mazda w trakcie "polerki" reflektora.
 opis: Pierwsze auto Grodka, zakupione w baninie. Niestety obecnie gnije sobie na złomowcu w Łęgowie.
 demo: false
 dane:
