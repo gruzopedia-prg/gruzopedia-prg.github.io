@@ -4,8 +4,8 @@ wlasciciel: Jasina
 rok: ??-2026
 status: w użyciu
 ocena: "7,2"
-zdjecie: /assets/img/brak-zdjecia.svg
-podpis_zdjecia: Tu pojawi się zdjęcie samochodu.
+zdjecie: /assets/img/dostojna_skoda.jpeg
+podpis_zdjecia: Fabia po modyfikacji maski
 opis: Sprawdzone daily. (work in progress)
 demo: true
 dane:

@@ -4,8 +4,8 @@ wlasciciel: Jasina
 rok: 2025? (do potwierdzenia)
 status: porzucony u handlarza
 ocena: "8,1"
-zdjecie: /assets/img/brak-zdjecia.svg
-podpis_zdjecia: Tu pojawi się zdjęcie samochodu.
+zdjecie: /assets/img/dostojne_audi.jpeg
+podpis_zdjecia: Audi w Toruniu
 opis: Audi 80 [work in progress]
 demo: true
 dane:
