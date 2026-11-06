@@ -1,13 +1,53 @@
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Gruzopedia PRG</title>
-</head>
-<body>
-  <h1>GRUZOPEDIA PRG</h1>
-  <h2>Encyklopedia aut bożych</h2>
-  <p>Każdy gruz ma swoją historię.</p>
-</body>
-</html>
+---
+layout: default
+title: Strona główna
+---
+<div class="homepage">
+  <h1>Strona główna</h1>
+  <div class="welcome-panel">
+    <div>
+      <h2>Witaj w <span>Gruzopedii PRG</span></h2>
+      <p>Dostojnej encyklopedii przuszczańskich gruzów, ich właścicieli, napraw, usterek i osiągnięć drogowych.</p>
+      <p class="welcome-small">Aktualnie w encyklopedii: <strong>{{ site.auta | size }}</strong> {% assign n = site.auta | size %}{% if n == 1 %}artykuł{% else %}artykułów{% endif %}.</p>
+    </div>
+    <div class="welcome-logo" aria-hidden="true">G<span>.</span></div>
+  </div>
+
+  <div class="home-columns">
+    <section class="home-box">
+      <h2>O projekcie</h2>
+      <p><strong>Gruzopedia PRG</strong> kataloguje pojazdy grupy oraz dokumentuje ich barwną historię. Dane techniczne są mile widziane, ale równie ważne pozostają zasługi dla lokalnej motoryzacji.</p>
+      <p><a href="{{ '/o-gruzopedii/' | relative_url }}">Czytaj więcej o Gruzopedii…</a></p>
+    </section>
+  </div>
+
+  <section class="catalog" id="spis-aut">
+    <h2>Spis pojazdów</h2>
+    <p class="section-note">Wszystkie odnotowane samochody, bez względu na ich obecny stan.</p>
+    <div class="catalog-controls">
+      <label for="catalog-search">Znajdź hasło:</label>
+      <input id="catalog-search" type="search" placeholder="Model, właściciel, rocznik…" autocomplete="off">
+      <span id="catalog-counter" aria-live="polite"></span>
+    </div>
+    <div class="catalog-table-wrap">
+      <table class="wikitable catalog-table">
+        <thead><tr><th>Artykuł</th><th>Właściciel</th><th>Rocznik</th><th>Status</th><th>Gruzowatość</th></tr></thead>
+        <tbody>
+          {% assign sorted_cars = site.auta | sort: 'title' %}
+          {% for auto in sorted_cars %}
+            <tr class="car-row" data-search="{{ auto.title | append: ' ' | append: auto.wlasciciel | append: ' ' | append: auto.rok | append: ' ' | append: auto.status | downcase | escape }}">
+              <td><a href="{{ auto.url | relative_url }}">{{ auto.title | escape }}</a>{% if auto.demo %} <small class="small-muted">(przykład)</small>{% endif %}</td>
+              <td>{{ auto.wlasciciel | default: '—' | escape }}</td>
+              <td>{{ auto.rok | default: '—' | escape }}</td>
+              <td>{{ auto.status | default: '—' | escape }}</td>
+              <td>{% if auto.ocena %}{{ auto.ocena | escape }}/10{% else %}—{% endif %}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <p id="catalog-empty" hidden>Nie znaleziono pojazdów pasujących do wyszukiwania.</p>
+    {% if site.auta.size == 0 %}<p>Nie ma jeszcze żadnych artykułów. Dodaj pierwszy pojazd w folderze <code>_auta</code>.</p>{% endif %}
+  </section>
+  <p class="last-note">Gruzopedia to kronika grupy, nie oficjalny rejestr pojazdów. Szczegóły mogą odbiegać od danych producenta oraz rzeczywistości.</p>
+</div>

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{ page.opis | default: site.description | escape }}">
+  <title>{{ page.title | default: site.title | escape }} — Gruzopedia PRG</title>
+  <link rel="icon" href="{{ '/assets/img/favicon.svg' | relative_url }}" type="image/svg+xml">
+  <link rel="stylesheet" href="{{ '/assets/css/wiki.css' | relative_url }}">
+  <script defer src="{{ '/assets/js/wiki.js' | relative_url }}"></script>
+</head>
+<body>
+  <div class="topline">
+    <span>Gruzopedia PRG • Encyklopedia aut bożych</span>
+    <span class="topline-right">Wersja 1.0 · <a href="{{ '/o-gruzopedii/' | relative_url }}">O projekcie</a></span>
+  </div>
+  <header class="site-header">
+    <a class="brand" href="{{ '/' | relative_url }}" aria-label="Gruzopedia PRG — strona główna">
+      <span class="brand-mark" aria-hidden="true">G<span class="brand-wheel">◌</span></span>
+      <span class="brand-copy"><strong>GRUZOPEDIA</strong><small>ENCYKLOPEDIA AUT BOŻYCH</small></span>
+    </a>
+    <span class="header-note">Est. 2026 &nbsp; • &nbsp; PRG</span>
+  </header>
+
+  <div class="wiki-grid">
+    <aside class="wiki-sidebar" aria-label="Menu nawigacyjne">
+      <section class="side-group">
+        <h2>Nawigacja</h2>
+        <ul>
+          <li><a href="{{ '/' | relative_url }}">Strona główna</a></li>
+          <li><a href="{{ '/#spis-aut' | relative_url }}">Spis pojazdów</a></li>
+          <li><a href="{{ '/o-gruzopedii/' | relative_url }}">O Gruzopedii</a></li>
+        </ul>
+      </section>
+      <section class="side-group">
+        <h2>Wyszukiwanie</h2>
+        <form class="side-search" role="search" action="{{ '/' | relative_url }}" method="get">
+          <label for="sidebar-search" class="visually-hidden">Szukaj samochodu</label>
+          <input id="sidebar-search" name="q" type="search" placeholder="Szukaj auta…">
+          <button type="submit">Szukaj</button>
+        </form>
+      </section>
+      <section class="side-group">
+        <h2>Projekt</h2>
+        <ul>
+          <li><a href="https://github.com/{{ site.repository }}" rel="noopener noreferrer">Repozytorium</a></li>
+          <li><a href="https://github.com/{{ site.repository }}/new/main/_auta" rel="noopener noreferrer">Dodaj artykuł</a></li>
+        </ul>
+      </section>
+      <div class="side-small">Treści o charakterze kronikarskim. Stan techniczny pojazdów może zmieniać się bez uprzedzenia.</div>
+    </aside>
+
+    <div class="wiki-main">
+      <nav class="page-tabs" aria-label="Zakładki strony">
+        <span class="tab-current">Artykuł</span>
+        <a href="{{ '/' | relative_url }}">Strona główna</a>
+        {% if page.collection == 'auta' %}
+        <a class="tab-edit" href="https://github.com/{{ site.repository }}/edit/main/{{ page.path }}">Edytuj źródło</a>
+        {% endif %}
+      </nav>
+      <main class="wiki-content" id="main-content">
+        {{ content }}
+      </main>
+      <footer class="site-footer">
+        Gruzopedia PRG — niezależna encyklopedia pojazdów o szczególnej wartości sentymentalnej.
+        <span><a href="{{ '/o-gruzopedii/' | relative_url }}">Informacje</a> · <a href="https://github.com/{{ site.repository }}">Kod źródłowy</a></span>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>

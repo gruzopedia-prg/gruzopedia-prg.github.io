@@ -1,0 +1,21 @@
+title: Gruzopedia PRG
+description: Nieformalna encyklopedia aut bożych.
+url: "https://gruzopedia-prg.github.io"
+baseurl: ""
+lang: pl
+repository: "gruzopedia-prg/gruzopedia-prg.github.io"
+markdown: kramdown
+collections:
+  auta:
+    output: true
+    permalink: /auta/:name/
+defaults:
+  - scope:
+      path: ""
+      type: auta
+    values:
+      layout: auto
+      zdjecie: /assets/img/brak-zdjecia.svg
+exclude:
+  - README.md
+  - .gitignore

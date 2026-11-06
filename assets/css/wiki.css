@@ -1,0 +1,139 @@
+/* Gruzopedia PRG — klasyczna estetyka serwisów wiki z lat 2000–2010. */
+:root { color-scheme: light; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: #f6f6f6; color: #202122; font: 14px/1.55 Arial, Helvetica, sans-serif; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+a:visited { color: #0b0080; }
+button, input { font: inherit; }
+button { cursor: pointer; }
+[hidden] { display: none !important; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+.topline { height: 29px; padding: 5px 20px 4px; border-bottom: 1px solid #ddd; color: #5b5b5b; background: #fbfbfb; font-size: 11px; display: flex; justify-content: space-between; gap: 10px; }
+.topline-right { white-space: nowrap; }
+.site-header { position: relative; height: 116px; padding: 17px 26px 0; background: linear-gradient(#fff 0%,#f9f9f9 55%,#ecf0f5 100%); }
+.brand { display: inline-flex; align-items: center; gap: 12px; color: #24292e; text-decoration: none; }
+.brand:visited { color: #24292e; }
+.brand:hover { text-decoration: none; }
+.brand-mark { position: relative; display: inline-grid; place-items: center; height: 78px; width: 78px; border: 1px solid #8997a6; background: #f5f6f2; color: #39526c; font: bold 66px/1 Georgia, 'Times New Roman', serif; }
+.brand-wheel { position: absolute; bottom: 0; right: 4px; font: 30px/1 Georgia,serif; color: #8292a2; }
+.brand-copy strong { display: block; font: normal 31px/.98 Georgia, 'Times New Roman',serif; letter-spacing: 1px; }
+.brand-copy small { display: block; font: 10px/1.4 Georgia,serif; letter-spacing: 1.35px; margin-top: 6px; }
+.header-note { position: absolute; right: 25px; bottom: 25px; color: #848484; font: 12px Georgia,serif; }
+.wiki-grid { display: grid; grid-template-columns: 177px minmax(0,1fr); align-items: start; max-width: 1600px; }
+.wiki-sidebar { padding: 16px 12px 24px 18px; font-size: 12px; }
+.side-group { margin-bottom: 22px; }
+.side-group h2 { font-size: 12px; font-weight: normal; margin: 0 0 5px; padding: 0 0 2px 3px; border-bottom: 1px solid #bac4cf; color: #424242; }
+.side-group ul { margin: 0; padding: 0 0 0 14px; list-style: none; }
+.side-group li { padding: 2px 0; }
+.side-search input { display: block; width: 100%; height: 24px; padding: 2px 4px; border: 1px solid #a2a9b1; background: white; border-radius: 0; font-size: 12px; }
+.side-search button { margin-top: 5px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 2px 8px; font-size: 11px; }
+.side-small { font-size: 10.5px; line-height: 1.45; color: #777; border-top: 1px solid #ccc; padding: 8px 3px; }
+.wiki-main { min-width: 0; }
+.page-tabs { min-height: 29px; display: flex; align-items: flex-end; padding: 0 0 0 8px; gap: 0; background: linear-gradient(#f4f7fa,#e4edf6); border-bottom: 1px solid #a7d7f9; font-size: 12px; }
+.page-tabs > a, .page-tabs > span { border: 1px solid #a7d7f9; border-bottom: 0; padding: 4px 11px 5px; background: #f8fbfd; margin-right: 2px; color: #0645ad; line-height: 18px; }
+.page-tabs .tab-current { background: #fff; color: #202122; font-weight: bold; padding-bottom: 6px; margin-bottom: -1px; }
+.page-tabs .tab-edit { margin-left: auto; margin-right: 10px; }
+.wiki-content { padding: 21px 28px 42px; background: white; border-left: 1px solid #a7d7f9; border-right: 1px solid #a7d7f9; border-bottom: 1px solid #a7d7f9; min-height: 650px; }
+.wiki-content h1 { font: normal 29px/1.3 Georgia, 'Times New Roman',serif; padding-bottom: 3px; border-bottom: 1px solid #a2a9b1; margin: 0 0 13px; }
+.wiki-content h2 { font: normal 21px/1.35 Georgia, 'Times New Roman',serif; border-bottom: 1px solid #a2a9b1; margin: 23px 0 9px; padding-bottom: 2px; }
+.wiki-content h3 { font: bold 16px/1.35 Arial,sans-serif; margin: 20px 0 7px; }
+.wiki-content p { margin: 8px 0 12px; }
+.wiki-content ul, .wiki-content ol { margin-top: 5px; padding-left: 25px; }
+.wiki-content li { margin: 3px 0; }
+.wiki-content img { max-width: 100%; }
+.wiki-content code { font: 12px Consolas,monospace; background: #f8f8f8; padding: 1px 3px; border: 1px solid #ededed; }
+.article-subtitle { color: #54595d; font-size: 12px; margin-top: -7px; margin-bottom: 17px; }
+.article-body { min-height: 350px; }
+.article-body > h2:first-child { margin-top: 17px; }
+.article-body .lead { margin-bottom: 13px; }
+.infobox { float: right; width: 290px; margin: 0 0 20px 26px; border: 1px solid #a2a9b1; padding: 3px; background: #f8f9fa; font-size: 12px; clear: right; }
+.infobox-title { padding: 6px 8px; text-align: center; font-weight: bold; font-size: 15px; background: #ced8e4; }
+.infobox-photo { margin: 7px 5px; text-align: center; }
+.infobox-photo a { display: block; }
+.infobox-photo img { display: block; width: 100%; max-height: 240px; object-fit: contain; background: #eee; border: 1px solid #ddd; }
+.infobox-photo figcaption { color: #54595d; font-size: 11px; padding: 5px 1px; }
+.infobox-table { border-collapse: collapse; width: 100%; }
+.infobox-table th, .infobox-table td { border-top: 1px solid #d8dadd; padding: 5px 7px; vertical-align: top; text-align: left; }
+.infobox-table th { width: 38%; font-weight: bold; color: #333; }
+.toc { display: table; max-width: 95%; padding: 9px 15px 10px; margin: 19px 0; border: 1px solid #a2a9b1; background: #f8f9fa; font-size: 13px; }
+.toc-title { font-weight: bold; text-align: center; }
+.toc-toggle { border: 0; padding: 0 0 0 4px; background: transparent; color: #0645ad; font-size: 11px; }
+.toc ol { padding: 0; margin: 7px 0 0; list-style: none; }
+.toc li { margin: 3px 0; }
+.toc li.toc-sub { margin-left: 15px; }
+.toc-number { display: inline-block; min-width: 25px; padding-right: 6px; color: #333; }
+.article-gallery { clear: both; padding-top: 5px; }
+.gallery-grid { display: flex; flex-wrap: wrap; gap: 12px; padding: 9px 0; }
+.gallery-grid figure { margin: 0; padding: 7px; width: 184px; border: 1px solid #c8ccd1; background: #f8f9fa; }
+.gallery-grid img { display: block; width: 100%; height: 112px; object-fit: cover; background: #e2e2e2; }
+.gallery-grid figcaption { margin-top: 5px; font-size: 11px; line-height: 1.3; color: #54595d; }
+.article-bottom { clear: both; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 7px 10px; font-size: 12px; margin-top: 34px; }
+.article-edit-note { float: right; }
+.welcome-panel { display: grid; grid-template-columns: 1fr 110px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 14px 22px 12px; gap: 20px; }
+.welcome-panel h2 { border: 0; margin: 0 0 8px; font-size: 24px; }
+.welcome-panel h2 span { font-weight: bold; }
+.welcome-panel p { margin: 7px 0; }
+.welcome-panel .welcome-small { font-size: 12px; }
+.welcome-logo { align-self: center; justify-self: center; font: 74px/.9 Georgia,serif; color: #4d6279; }
+.welcome-logo span { color: #949fae; }
+.home-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 22px; }
+.home-box { border: 1px solid #a2a9b1; padding: 0 14px 9px; }
+.home-box h2 { font: bold 16px/1.3 Arial,sans-serif; background: #dce6f2; border: 0; margin: 0 -14px 10px; padding: 6px 12px; }
+.catalog { margin-top: 28px; }
+.catalog > h2 { margin-bottom: 6px; }
+.section-note, .last-note { font-size: 12px; color: #54595d; }
+.catalog-controls { margin: 14px 0 9px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; font-size: 12px; }
+.catalog-controls input { padding: 5px 7px; border: 1px solid #a2a9b1; border-radius: 0; width: min(270px,100%); font-size: 13px; }
+#catalog-counter { color: #72777d; }
+.catalog-table-wrap { overflow-x: auto; }
+.wikitable { border-collapse: collapse; font-size: 13px; width: 100%; }
+.wikitable th, .wikitable td { border: 1px solid #a2a9b1; padding: 6px 9px; text-align: left; vertical-align: top; }
+.wikitable th { background: #eaecf0; font-weight: bold; }
+.wikitable tbody tr:nth-child(even) { background: #f8f9fa; }
+.small-muted { color: #72777d; font-size: 11px; }
+.last-note { margin-top: 30px !important; padding-top: 12px; border-top: 1px solid #ddd; }
+.site-footer { border-left: 1px solid #a7d7f9; padding: 13px 18px 25px; font-size: 11px; color: #54595d; }
+.site-footer span { display: block; margin-top: 3px; }
+@media (max-width: 880px) {
+  .wiki-grid { grid-template-columns: 140px minmax(0,1fr); }
+  .wiki-sidebar { padding-left: 10px; padding-right: 9px; }
+  .wiki-content { padding: 19px 19px 32px; }
+  .infobox { width: 245px; margin-left: 16px; }
+  .brand-copy strong { font-size: 26px; }
+}
+@media (max-width: 630px) {
+  .topline-right, .header-note { display: none; }
+  .site-header { height: 93px; padding: 9px 13px; }
+  .brand-mark { height: 65px; width: 65px; font-size: 53px; }
+  .brand-copy strong { font-size: 23px; }
+  .brand-copy small { font-size: 8px; letter-spacing: .6px; }
+  .wiki-grid { display: flex; flex-direction: column; }
+  .wiki-sidebar { order: 2; width: 100%; display: flex; gap: 16px; flex-wrap: wrap; padding: 18px; border-top: 1px solid #c8ccd1; }
+  .wiki-sidebar .side-group { min-width: 120px; flex: 1; margin-bottom: 0; }
+  .wiki-sidebar .side-small { width: 100%; }
+  .wiki-main { order: 1; width: 100%; }
+  .page-tabs { padding-left: 7px; }
+  .page-tabs > a, .page-tabs > span { padding: 4px 8px 5px; }
+  .wiki-content { padding: 18px 14px 28px; min-height: 380px; }
+  .wiki-content h1 { font-size: 27px; }
+  .infobox { float: none; width: min(100%,345px); margin: 10px auto 20px; }
+  .infobox-photo img { max-height: 300px; }
+  .home-columns { grid-template-columns: 1fr; }
+  .welcome-panel { grid-template-columns: 1fr; }
+  .welcome-logo { display: none; }
+  .article-bottom .article-edit-note { display: block; float: none; margin-top: 4px; }
+  .toc { max-width: 100%; }
+  .gallery-grid figure { width: calc(50% - 6px); }
+}
+@media (max-width: 370px) {
+  .brand-copy strong { font-size: 19px; }
+  .brand-copy small { letter-spacing: 0; }
+  .gallery-grid figure { width: 100%; }
+}
+/* Tabele wpisane bezpośrednio w artykułach Markdown. */
+.article-body table { border-collapse: collapse; margin: 12px 0 18px; font-size: 13px; max-width: 100%; }
+.article-body table th, .article-body table td { border: 1px solid #a2a9b1; padding: 6px 9px; text-align: left; }
+.article-body table th { background: #eaecf0; }
+.article-body img { height: auto; border: 1px solid #c8ccd1; padding: 3px; background: #f8f9fa; }

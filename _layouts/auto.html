@@ -1,0 +1,55 @@
+---
+layout: default
+---
+<article class="wiki-article">
+  <h1>{{ page.title | escape }}</h1>
+  <div class="article-subtitle">Z Gruzopedii PRG, wolnej encyklopedii aut bożych</div>
+
+  <aside class="infobox" aria-label="Informacje o pojeździe">
+    <div class="infobox-title">{{ page.title | escape }}</div>
+    <figure class="infobox-photo">
+      <a href="{{ page.zdjecie | relative_url }}" target="_blank" rel="noopener noreferrer">
+        <img src="{{ page.zdjecie | relative_url }}" alt="{{ page.title | escape }}" loading="eager">
+      </a>
+      {% if page.podpis_zdjecia %}<figcaption>{{ page.podpis_zdjecia | escape }}</figcaption>{% endif %}
+    </figure>
+    <table class="infobox-table">
+      <tbody>
+        {% if page.wlasciciel %}<tr><th>Właściciel</th><td>{{ page.wlasciciel | escape }}</td></tr>{% endif %}
+        {% if page.status %}<tr><th>Status</th><td>{{ page.status | escape }}</td></tr>{% endif %}
+        {% if page.ocena %}<tr><th>Gruzowatość</th><td>{{ page.ocena | escape }} / 10</td></tr>{% endif %}
+        {% for para in page.dane %}
+          <tr><th>{{ para[0] | replace: '_', ' ' | capitalize | escape }}</th><td>{{ para[1] | escape }}</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </aside>
+
+  <div class="article-body" id="article-body">
+    {% if page.opis %}<p class="lead"><strong>{{ page.title | escape }}</strong> — {{ page.opis | escape }}</p>{% endif %}
+    <nav class="toc" id="toc" aria-label="Spis treści" hidden>
+      <div class="toc-title">Spis treści <button type="button" id="toc-toggle" class="toc-toggle">[ukryj]</button></div>
+      <ol id="toc-list"></ol>
+    </nav>
+    {{ content }}
+  </div>
+
+  {% if page.galeria and page.galeria.size > 0 %}
+    <section class="article-gallery">
+      <h2 id="galeria">Galeria</h2>
+      <div class="gallery-grid">
+        {% for foto in page.galeria %}
+          <figure>
+            <a href="{{ foto.plik | relative_url }}" target="_blank" rel="noopener noreferrer"><img src="{{ foto.plik | relative_url }}" alt="{{ foto.opis | default: page.title | escape }}" loading="lazy"></a>
+            <figcaption>{{ foto.opis | escape }}</figcaption>
+          </figure>
+        {% endfor %}
+      </div>
+    </section>
+  {% endif %}
+
+  <div class="article-bottom">
+    <strong>Kategoria:</strong> <a href="{{ '/#spis-aut' | relative_url }}">Samochody</a>
+    <span class="article-edit-note"><a href="https://github.com/{{ site.repository }}/edit/main/{{ page.path }}">Edytuj artykuł w GitHubie</a></span>
+  </div>
+</article>
